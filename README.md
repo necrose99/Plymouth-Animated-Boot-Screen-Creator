@@ -9,16 +9,24 @@ This is a template built off of Eonix's animated cat plymouth theme. I just wrot
 `sudo apt install plymouth-themes`
 
 2. Go to the plymouth themes folder
-`cd /usr/share/plymouth/themes`
+```
+cd /usr/share/plymouth/themes
+```
 
 3. Create new theme folder
-`sudo mkdir ./{{ThemeNameHere}}`
+```
+sudo mkdir ./{{ThemeNameHere}}
+````
 
 4. Move into your new theme folder. 
-`cd {{ThemeNameHere}}
+```
+cd {{ThemeNameHere}}
+```
 
 3. Clone this repo contents into the folder.
-`sudo git clone https://github.com/thedonquixotic/Plymouth-Animated-Boot-Screen-Creator.git .`
+```
+sudo git clone https://github.com/thedonquixotic/Plymouth-Animated-Boot-Screen-Creator.git .
+```
 The dot at the end will clone the contents of the template folder into your new theme folder. 
 
 ### Customization
@@ -57,7 +65,9 @@ sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth d
 And select the number for your theme (I can't say this for sure but if the theme you want is under 0 for the auto mode, then I would select that as I think it boots in faster than manual)
 
 3. Update the initramfs image.
-`sudo update-initramfs -u`
+```
+sudo update-initramfs -u
+```
 
 4. Now reboot.
 
@@ -70,15 +80,21 @@ I found some scripts that are supposed to improve the transitions etc between Pl
 Anyway:
 
 - Edit the file /etc/initramfs-tools/conf.d/splash and add this line:
-`FRAMEBUFFER=y`
+```
+FRAMEBUFFER=y
+```
 
 - To enable smooth transition you have to disable your display manager unit, e.g.
 
-`systemctl disable gdm.service`
+```
+systemctl disable gdm.service
+```
 
 - Enable the respective DM-plymouth Unit (GDM, LXDM, SLiM units provided), e.g.
 
-`systemctl enable gdm-plymouth.service`
+```
+systemctl enable gdm-plymouth.service
+```
 
 
 
